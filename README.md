@@ -1,4 +1,4 @@
-# Instruciones 
+# instrucción 
 <blockquote>
   Con Usar npm install y npm start en cualquier proyecto este funcionara 
   
