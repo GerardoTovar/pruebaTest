@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-grid [fixed]="true" style="padding: 0px;">
+      <ion-row>
+        <ion-col size="10" style="align-self: center;">    
+          <ion-title>Task List</ion-title>
+        </ion-col>
+        <ion-col size="2">
+          <ion-button fill="clear" slots="end"  id="popover-button">
+            <ion-icon name="filter-outline"></ion-icon>
+          </ion-button>
+          <ion-popover trigger="popover-button" [dismissOnSelect]="true">
+            <ng-template>
+              <ion-content>
+                <ion-list>
+                  <ion-item [button]="true" [detail]="false" *ngFor="let opt of optsPop">
+                    <ion-checkbox [checked]="opt.value" (click)="saveCheck(opt)">{{opt.name}}</ion-checkbox>
+                  </ion-item>
+                </ion-list>
+              </ion-content>
+            </ng-template>
+          </ion-popover>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <app-taskList *ngFor="let task of tasksList" [task]="task" (ChangeValue)="getAllTasks()"></app-taskList>
+  </ion-list>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button routerLink="/new">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

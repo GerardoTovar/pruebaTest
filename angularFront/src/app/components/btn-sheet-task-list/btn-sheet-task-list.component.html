@@ -1,0 +1,17 @@
+<mat-nav-list>
+  <a mat-list-item (click)="detail($event)">
+    <span matListItemTitle>Detalle</span>
+  </a>
+  <a mat-list-item (click)="editar($event)">
+    <span matListItemTitle>Editar</span>
+  </a>
+  <a mat-list-item (click)="deleteTask($event)">
+    <span matListItemTitle>Eliminar</span>
+  </a>
+  <a mat-list-item (click)="taskComplete($event)">
+    <span matListItemTitle>Marcar Como Completada</span>
+  </a>
+  <a mat-list-item (click)="taskIncomplete($event)">
+    <span matListItemTitle>Marcar Como Pendiente</span>
+  </a>
+</mat-nav-list>

@@ -1,0 +1,7 @@
+<mat-nav-list>
+    <mat-radio-group [(ngModel)]="label" style="display: flex;flex-direction: column;">
+        <mat-radio-button value="Todos" (click)="closeFilter($event)">Todos</mat-radio-button>
+        <mat-radio-button value="true" (click)="closeFilter($event)">Completas</mat-radio-button>
+        <mat-radio-button value="false" (click)="closeFilter($event)">Pendientes</mat-radio-button>
+    </mat-radio-group>
+</mat-nav-list>

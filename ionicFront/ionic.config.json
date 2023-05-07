@@ -1,0 +1,13 @@
+{
+  "name": "ionicFront",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/localhost",
+      "proxyUrl": "http://localhost:3000"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+<div class="root">
+    <h2>{{title}}</h2>
+
+    <form class="task-form"  [formGroup]="taskForm" (ngSubmit)="saveTask()">
+        <mat-form-field class="task-full-width">
+            <mat-label>Task Name</mat-label>
+            <input matInput formControlName="name"/>
+        </mat-form-field>
+
+        <mat-form-field class="task-full-width">
+            <mat-label>Description</mat-label>
+            <textarea matInput
+            formControlName="description"
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="10"></textarea>
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" routerLink="./new">{{title}}</button>
+    </form>
+</div>

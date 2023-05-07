@@ -1,0 +1,21 @@
+
+<div class="btnNewTask">
+  <button mat-raised-button color="primary" routerLink="./new">New Task</button>
+  <button mat-raised-button color="primary" (click)="openBottomSheetFilter()" style="margin-left: 10px;">
+    <mat-icon matListItemIcon style="margin: 0px;">filter_list</mat-icon>
+  </button>
+</div>
+<mat-selection-list #shoes>
+  <div *ngFor="let task of tasksList" style="display: flex;align-items: center;">
+    <mat-list-item >{{task.name}}
+      <mat-icon matListItemIcon (click)="openBottomSheet(task.id)">more_vert</mat-icon>
+    </mat-list-item>
+    <ng-container *ngIf="task.complete else elseTemplate">
+      <mat-icon matListItemIcon (click)="openBottomSheet(task.id)">done</mat-icon>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <mat-icon matListItemIcon (click)="openBottomSheet(task.id)">close</mat-icon>       
+    </ng-template>
+  </div>
+</mat-selection-list>
+

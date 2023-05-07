@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar> 
+    <ion-title>Task Detail</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="task">
+  <div class="ion-padding">
+    <h4> Titulo </h4>
+    <p> {{task.name}}</p>
+    <h4> Description </h4>
+    <p> {{task.description}}</p>
+  </div>
+</ion-content>
